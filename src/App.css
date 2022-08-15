@@ -1,0 +1,20 @@
+.calci{
+  width: 360px;
+  margin: 100px auto;
+
+}
+.inputDisplay{
+  width: 350px;
+  height: 80px;
+  background-color: darkgray;
+  padding: 3px;
+  border: 2px solid black;
+  font-size: 40px
+  
+}
+.button{
+  height: 60px;
+  width: 90px;
+  border: 1px solid black;
+  
+}
