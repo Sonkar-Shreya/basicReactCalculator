@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from "react"
+import Buttons from './Button'
 
 function Calculator(){
   const [result,setResult] = useState("");
@@ -14,8 +15,8 @@ function Calculator(){
   }
   return(
     <div className="calci">
-      <input type="text" className="inputDisplay" value={result} ></input>
-      <input type="button" value="1" className="button" onClick={handleClick}></input>
+       <input type="text" className="inputDisplay" value={result} ></input>
+      {/*<input type="button" value="1" className="button" onClick={handleClick}></input>
       <input type="button" value="2" className="button" onClick={handleClick}></input>
       <input type="button" value="3" className="button" onClick={handleClick}></input>
       <input type="button" value="4" className="button" onClick={handleClick}></input>
@@ -30,8 +31,24 @@ function Calculator(){
       <input type="button" value="/" className="button" onClick={handleClick}></input>
       <input type="button" value="*" className="button" onClick={handleClick}></input>
       <input type="button" value="clear" className="button" onClick={clearDisplay}></input>
-      <input type="button" value="=" className="button" onClick={showResult}></input>
-
+      <input type="button" value="=" className="button" onClick={showResult}></input> */}
+      <Buttons value="1" func={handleClick} />
+      <Buttons value="2" func={handleClick} />
+      <Buttons value="3" func={handleClick} />
+      <Buttons value="4" func={handleClick} />
+      <Buttons value="5" func={handleClick} />
+      <Buttons value="6" func={handleClick} />
+      <Buttons value="7" func={handleClick} />
+      <Buttons value="8" func={handleClick} />
+      <Buttons value="9" func={handleClick} />
+      <Buttons value="0" func={handleClick} />
+      <Buttons value="+" func={handleClick} />
+      <Buttons value="-" func={handleClick} />
+      <Buttons value="*" func={handleClick} />
+      <Buttons value="/" func={handleClick} />
+      <Buttons value="=" func={handleClick} />
+      <Buttons value="clear" func={handleClick} />
+    
     </div>
   );
 }
