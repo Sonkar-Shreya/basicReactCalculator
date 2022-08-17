@@ -1,56 +1,103 @@
-import './App.css'
-import { useState } from "react"
-import Buttons from './Button'
+import "./App.css";
+import { useState } from "react";
+import Buttons from "./Button";
 
-function Calculator(){
-  const [result,setResult] = useState("");
-  const handleClick = (e)=>{
-    setResult(result.concat(e.target.value));      
-  }
-  function clearDisplay(){
+function Calculator() {
+  const [result, setResult] = useState("");
+  const handleClick = (e) => {
+    setResult(result.concat(e.target.value));
+  };
+  function clearDisplay() {
     setResult("");
   }
-  function showResult(){
+  function showResult() {
     setResult(eval(result.toString()));
   }
-  return(
+
+  const ar=[
+    {
+      value : 1,
+      function : handleClick
+    },
+    {
+      value : 2,
+      function : handleClick
+    },
+    {
+      value : 3,
+      function : handleClick
+    },
+    {
+      value : 4,
+      function : handleClick
+    },
+    {
+      value : 5,
+      function : handleClick
+    },
+    {
+      value : 6,
+      function : handleClick
+    },
+    {
+      value : 7,
+      function : handleClick
+    },
+    {
+      value : 8,
+      function : handleClick
+    },
+    {
+      value : 9,
+      function : handleClick
+    },
+    {
+      value : 0,
+      function : handleClick
+    },
+    {
+      value : "+",
+      function : handleClick
+    },
+    {
+      value : "-",
+      function : handleClick
+    },
+    {
+      value : "*",
+      function : handleClick
+    },
+    {
+      value : "/",
+      function : handleClick
+    },
+    {
+      value : "=",
+      function : showResult
+    },
+    {
+      value : "Clear",
+      function : clearDisplay
+    }
+  ]
+  return (
     <div className="calci">
-       <input type="text" className="inputDisplay" value={result} ></input>
-      {/*<input type="button" value="1" className="button" onClick={handleClick}></input>
-      <input type="button" value="2" className="button" onClick={handleClick}></input>
-      <input type="button" value="3" className="button" onClick={handleClick}></input>
-      <input type="button" value="4" className="button" onClick={handleClick}></input>
-      <input type="button" value="5" className="button" onClick={handleClick}></input>
-      <input type="button" value="6" className="button" onClick={handleClick}></input>
-      <input type="button" value="7" className="button" onClick={handleClick}></input>
-      <input type="button" value="8" className="button" onClick={handleClick}></input>
-      <input type="button" value="9" className="button" onClick={handleClick}></input>
-      <input type="button" value="0" className="button" onClick={handleClick}></input>
-      <input type="button" value="+" className="button" onClick={handleClick}></input>
-      <input type="button" value="-" className="button" onClick={handleClick}></input>
-      <input type="button" value="/" className="button" onClick={handleClick}></input>
-      <input type="button" value="*" className="button" onClick={handleClick}></input>
-      <input type="button" value="clear" className="button" onClick={clearDisplay}></input>
-      <input type="button" value="=" className="button" onClick={showResult}></input> */}
-      <Buttons value="1" func={handleClick} />
-      <Buttons value="2" func={handleClick} />
-      <Buttons value="3" func={handleClick} />
-      <Buttons value="4" func={handleClick} />
-      <Buttons value="5" func={handleClick} />
-      <Buttons value="6" func={handleClick} />
-      <Buttons value="7" func={handleClick} />
-      <Buttons value="8" func={handleClick} />
-      <Buttons value="9" func={handleClick} />
-      <Buttons value="0" func={handleClick} />
-      <Buttons value="+" func={handleClick} />
-      <Buttons value="-" func={handleClick} />
-      <Buttons value="*" func={handleClick} />
-      <Buttons value="/" func={handleClick} />
-      <Buttons value="=" func={handleClick} />
-      <Buttons value="clear" func={handleClick} />
-    
+      <input type="text" className="inputDisplay" value={result}></input>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+        }}
+      >
+        {
+          ar.map((element)=>{
+            return <Buttons value={element.value} func={element.function}  />
+          })
+        }
+         
+      </div>
     </div>
   );
 }
 
-export default Calculator
+export default Calculator;
